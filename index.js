@@ -17,7 +17,7 @@ function AwairGlow(log, config) {
   this.polling_interval = Number(config["polling_interval"] || 600); // Seconds, 10 mins
   this.url =
     config["url"] ||
-    "http://dev-developer-apis.awair.is/v1/users/self/devices/" +
+    "http://developer-apis.awair.is/v1/users/self/devices/" +
       this.deviceType +
       "/" +
       this.deviceId +
@@ -39,7 +39,8 @@ AwairGlow.prototype = {
     var that = this;
 
     return request(options)
-      .then(function(data) {
+      .then(function(response) {
+        var data = response.data;
         that.log("%d readings", data.length);
         that.log("Score: " + data[data.length - 1].score);
         that.log("Temperature: " + data[data.length - 1].sensors[0].value);
