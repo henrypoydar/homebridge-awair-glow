@@ -3,6 +3,19 @@
   "version": "0.1.0",
   "description": "Awair Glow accessory plugin for homebridge: https://github.com/nfarina/homebridge",
   "main": "index.js",
+  "keywords": [
+    "homebridge-plugin",
+    "air quality sensor",
+    "temperature sensor",
+    "humidity sensor",
+  ],
+  "engines": {
+    "node": ">=0.12.0",
+    "homebridge": ">=0.2.0"
+  },
+  "author": {
+    "name": "@henrypoydar"
+  }
   "repository": {
     "type": "git",
     "url": "https://github.com/henrypoydar/homebridge-awair-glow.git"

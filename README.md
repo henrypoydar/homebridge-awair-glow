@@ -12,16 +12,18 @@ Assumes you have Homebridge installed.
 
 2. Get a list of your Awair devices so you can plug them in to the config: `curl -X GET  http://developer-apis.awair.is/v1/users/self/devices -H 'Authorization: Bearer {access-token}'`
 
-3. Install this plugin: `sudo npm install -g homebridge-awair-glow`
+3. Install this plugin: `[sudo] npm install -g homebridge-awair-glow`
 
 4. Add an accessory entry to your Homebridge configuration for each Awair Glow you'd like to add. Here's the syntax:
 
-    {
-      "name": "Awair Glow",
-      "accessory": "AwairGlow",
-      "token": "xxx.xxx.xxx",
-      "deviceId": 12345
-    }
+```
+  {
+    "name": "Awair Glow",
+    "accessory": "AwairGlow",
+    "token": "xxx.xxx.xxx",
+    "deviceId": "12345"
+  }
+```
 
 ## Development
 
