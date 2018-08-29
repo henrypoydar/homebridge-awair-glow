@@ -41,38 +41,32 @@ AwairGlow.prototype = {
     return request(options)
       .then(function(response) {
         var data = response.data;
-        that.log("%d readings", data.length);
-        that.log("Score: " + data[data.length - 1].score);
-        that.log("Temperature: " + data[data.length - 1].sensors[0].value);
-        that.log("Humidity: " + data[data.length - 1].sensors[1].value);
-        that.log("CO2: " + data[data.length - 1].sensors[2].value);
-        that.log("VOC: " + data[data.length - 1].sensors[3].value);
+        that.log("%d readings collected", data.length);
+        var dataPoint = data[data.length - 1];
+
+        that.airQualityService
+          .setCharacteristic(Characteristic.AirQuality, dataPoint.score)
+          .setCharacteristic(
+            Characteristic.VOCDensity,
+            dataPoint.sensors[3].value
+          )
+          .setCharacteristic(
+            Characteristic.CarbonDioxideLevel,
+            dataPoint.sensors[2].value
+          );
+        that.temperatureService.setCharacteristic(
+          Characteristic.CurrentTemperature,
+          dataPoint.sensors[0].value
+        );
+        humidityService.setCharacteristic(
+          Characteristic.CurrentRelativeHumidity,
+          dataPoint.sensors[1].value
+        );
       })
       .catch(function(err) {
-        that.log("Error contacting Awair API: " + err)
-        // API call failed...
+        that.log("Error contacting Awair API: " + err);
       });
-    //   .then(function(response) {
-    //   // if (!repos) {
-    //   //   repos = [];
-    //   // }
-    //   var data = response.body;
-    //   this.log("Score: " + data[data.length - 1].score);
-    //   this.log("Temperature: " + data[data.length - 1].sensors[0].value);
-    //   this.log("Humidity: " + data[data.length - 1].sensors[1].value);
-    //   this.log("CO2: " + data[data.length - 1].sensors[2].value);
-    //   this.log("VOC: " + data[data.length - 1].sensors[3].value);
-    //   // console.log(repos.length + " repos so far");
-    //   // if (response.headers.link.split(",").filter(function(link){ return link.match(/rel="next"/) }).length > 0) {
-    //   //   console.log("There is more.");
-    //   //   var next = new RegExp(/<(.*)>/).exec(response.headers.link.split(",").filter(function(link){ return link.match(/rel="next"/) })[0])[1];
-    //    //   return github.getUserRepos(next, repos);
-    // });
   },
-
-  // getState: function () {
-  //   this.log("#getState");
-  // },
 
   getServices: function() {
     var informationService = new Service.AccessoryInformation();
