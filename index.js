@@ -45,7 +45,7 @@ AwairGlow.prototype = {
         var dataPoint = data[data.length - 1];
 
         that.airQualityService
-          .setCharacteristic(Characteristic.AirQuality, dataPoint.score)
+          .setCharacteristic(Characteristic.AirQuality, that.convertScore(dataPoint.score))
           .setCharacteristic(
             Characteristic.VOCDensity,
             dataPoint.sensors[3].value
@@ -66,6 +66,25 @@ AwairGlow.prototype = {
       .catch(function(err) {
         that.log("Error contacting Awair API: " + err);
       });
+  },
+
+  convertScore: function(score) {
+    var pscore = parseFloat(score);
+    if (!score) {
+      return 0; // Error
+    } else if (score >= 90) {
+      return 1; // EXCELLENT
+    } else if (score >= 80 && score < 90) {
+      return 2; // GOOD
+    } else if (score >= 60 && score < 80) {
+      return 3; // FAIR
+    } else if (score >= 50 && score < 60) {
+      return 4; // INFERIOR
+    } else if (score < 50) {
+      return 5; // POOR
+    } else {
+      return 0; // Error
+    }
   },
 
   getServices: function() {
