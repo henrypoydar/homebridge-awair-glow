@@ -97,7 +97,7 @@ AwairGlow.prototype = {
     }
 
     // Intial state
-    this.getaData.bind(this);
+    this.getData.bind(this);
 
     return [
       informationService,
