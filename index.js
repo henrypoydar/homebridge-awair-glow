@@ -36,17 +36,19 @@ AwairGlow.prototype = {
       }
     };
 
+    var that = this;
+
     return request(options)
       .then(function(data) {
-        this.log("%d readings", data.length);
-        this.log("Score: " + data[data.length - 1].score);
-        this.log("Temperature: " + data[data.length - 1].sensors[0].value);
-        this.log("Humidity: " + data[data.length - 1].sensors[1].value);
-        this.log("CO2: " + data[data.length - 1].sensors[2].value);
-        this.log("VOC: " + data[data.length - 1].sensors[3].value);
+        that.log("%d readings", data.length);
+        that.log("Score: " + data[data.length - 1].score);
+        that.log("Temperature: " + data[data.length - 1].sensors[0].value);
+        that.log("Humidity: " + data[data.length - 1].sensors[1].value);
+        that.log("CO2: " + data[data.length - 1].sensors[2].value);
+        that.log("VOC: " + data[data.length - 1].sensors[3].value);
       })
       .catch(function(err) {
-        this.log("Error contacting Awair API: " + err)
+        that.log("Error contacting Awair API: " + err)
         // API call failed...
       });
     //   .then(function(response) {
