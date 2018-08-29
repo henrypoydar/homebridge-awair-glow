@@ -1,4 +1,5 @@
 var Service, Characteristic;
+var request = require("request");
 
 module.exports = function(homebridge) {
   Service = homebridge.hap.Service;
@@ -25,7 +26,6 @@ function AwairGlow(log, config) {
 }
 
 AwairGlow.prototype = {
-
   getData: function() {
     return request({
       method: "GET",
