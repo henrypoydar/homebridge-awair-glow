@@ -1,6 +1,6 @@
 {
-  "name": "Awair Glow",
   "accessory": "AwairGlow",
+  "name": "Awair Glow",
   "token": "xxx.xxx.xxx",
   "deviceId": "12345"
 }

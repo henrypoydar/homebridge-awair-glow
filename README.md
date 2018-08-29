@@ -18,8 +18,8 @@ Assumes you have Homebridge installed.
 
 ```
   {
-    "name": "Awair Glow",
     "accessory": "AwairGlow",
+    "name": "Awair Glow",
     "token": "xxx.xxx.xxx",
     "deviceId": "12345"
   }
@@ -31,11 +31,10 @@ Pull requests welcome. Useful information for further development:
 
 ### TODO
 
-- [ ] This plugin
-- [ ] Test env
-- [ ] This doc
-- [ ] Read device list and add accessories automagically
+- [ ] Custom characteristic to push score
+- [ ] Can't read VOC on iPhone
 - [ ] Platform-ize
+- [ ] Read device list and add accessories automagically
 
 ### Raw API Calls
 
