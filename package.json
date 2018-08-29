@@ -7,7 +7,7 @@
     "homebridge-plugin",
     "air quality sensor",
     "temperature sensor",
-    "humidity sensor",
+    "humidity sensor"
   ],
   "engines": {
     "node": ">=0.12.0",
@@ -15,7 +15,7 @@
   },
   "author": {
     "name": "@henrypoydar"
-  }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/henrypoydar/homebridge-awair-glow.git"
