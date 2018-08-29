@@ -10,7 +10,7 @@
     "humidity sensor"
   ],
   "engines": {
-    "node": ">=0.12.0",
+    "node": ">=6.0.0",
     "homebridge": ">=0.2.0"
   },
   "author": {
@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/henrypoydar/homebridge-awair-glow/issues"
   },
-  "homepage": "https://github.com/henrypoydar/homebridge-awair-glow#readme"
+  "homepage": "https://github.com/henrypoydar/homebridge-awair-glow#readme",
+  "dependencies": {
+    "request": "2.88.0"
+  }
 }
