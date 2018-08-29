@@ -1,0 +1,19 @@
+{
+  "name": "homebridge-awair-glow",
+  "version": "1.0.0",
+  "description": "Awair Glow accessory plugin for homebridge: https://github.com/nfarina/homebridge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henrypoydar/homebridge-awair-glow.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/henrypoydar/homebridge-awair-glow/issues"
+  },
+  "homepage": "https://github.com/henrypoydar/homebridge-awair-glow#readme"
+}
