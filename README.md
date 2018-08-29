@@ -2,11 +2,11 @@
 
 ## TODO
 
-[] This plugin
-[] Test env
-[] This doc
-[] Read device list and add accessories automagically
-[] Platform-ize
+- [ ] This plugin
+- [ ] Test env
+- [ ] This doc
+- [ ] Read device list and add accessories automagically
+- [ ] Platform-ize
 
 ## Awair API
 
