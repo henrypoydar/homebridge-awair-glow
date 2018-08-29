@@ -58,7 +58,7 @@ AwairGlow.prototype = {
           Characteristic.CurrentTemperature,
           dataPoint.sensors[0].value
         );
-        humidityService.setCharacteristic(
+        that.humidityService.setCharacteristic(
           Characteristic.CurrentRelativeHumidity,
           dataPoint.sensors[1].value
         );
