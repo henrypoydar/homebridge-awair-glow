@@ -38,9 +38,9 @@ Pull requests welcome. Useful information for further development:
 
 ### Raw API Calls
 
-    http://dev-developer-apis.awair.is/v1/users/self/devices
+    http://developer-apis.awair.is/v1/users/self/devices
 
-    http://dev-developer-apis.awair.is/v1/users/self/devices/:device_type/:device_id/air-data/15-min-avg
+    http://developer-apis.awair.is/v1/users/self/devices/:device_type/:device_id/air-data/15-min-avg
 
 ### API Response
 
